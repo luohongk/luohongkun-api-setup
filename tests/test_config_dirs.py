@@ -142,9 +142,9 @@ class ConfigDirTests(unittest.TestCase):
 
         self.assertGreaterEqual(len(non_empty_lines), 4, content)
         self.assertEqual(non_empty_lines[0], "# existing comment")
-        self.assertEqual(non_empty_lines[1], 'model_provider = "xixu"')
+        self.assertEqual(non_empty_lines[1], 'model_provider = "luohongkun"')
         self.assertEqual(non_empty_lines[2], "[projects.'E:\\\\github\\\\demo']")
-        self.assertIn("[model_providers.xixu]", non_empty_lines)
+        self.assertIn("[model_providers.luohongkun]", non_empty_lines)
 
 
 if __name__ == "__main__":

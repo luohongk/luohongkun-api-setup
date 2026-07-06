@@ -39,12 +39,12 @@ if ($content.Length -gt 0) {
 }
 
 $filteredLines = [System.Collections.Generic.List[string]]::new()
-$inXixuBlock = $false
+$inLuohongkunBlock = $false
 
 foreach ($line in $lines) {
-    if ($inXixuBlock) {
+    if ($inLuohongkunBlock) {
         if ($line -match '^\[.*\][ \t]*$') {
-            $inXixuBlock = $false
+            $inLuohongkunBlock = $false
         } else {
             continue
         }
@@ -54,8 +54,8 @@ foreach ($line in $lines) {
         continue
     }
 
-    if ($line -match '^\[model_providers\.xixu\][ \t]*$') {
-        $inXixuBlock = $true
+    if ($line -match '^\[model_providers\.luohongkun\][ \t]*$') {
+        $inLuohongkunBlock = $true
         continue
     }
 
@@ -81,7 +81,7 @@ if ($outputLines.Count -gt 0 -and $outputLines[$outputLines.Count - 1].Trim().Le
     $outputLines.Add("")
 }
 
-$outputLines.Add('model_provider = "xixu"')
+$outputLines.Add('model_provider = "luohongkun"')
 
 if ($insertIndex -lt $filteredLines.Count -and $filteredLines[$insertIndex].Trim().Length -ne 0) {
     $outputLines.Add("")
@@ -99,21 +99,21 @@ if ($outputLines.Count -gt 0) {
     $outputLines.Add("")
 }
 
-$outputLines.Add('[model_providers.xixu]')
-$outputLines.Add('name = "Xi Xu''s AI Inference"')
-$outputLines.Add('base_url = "https://api.xi-xu.me/v1"')
-$outputLines.Add('env_key = "XIXU_API_KEY"')
+$outputLines.Add('[model_providers.luohongkun]')
+$outputLines.Add('name = "Luo Hongkun''s AI Inference"')
+$outputLines.Add('base_url = "https://api.luohongkun.top/v1"')
+$outputLines.Add('env_key = "LUOHONGKUN_API_KEY"')
 
 $content = [string]::Join("`r`n", $outputLines) + "`r`n"
 
 Set-Content -Path $ConfigFile -Value $content -Encoding UTF8
 
-$env:XIXU_API_KEY = $ApiKey
-[System.Environment]::SetEnvironmentVariable("XIXU_API_KEY", $ApiKey, "User")
+$env:LUOHONGKUN_API_KEY = $ApiKey
+[System.Environment]::SetEnvironmentVariable("LUOHONGKUN_API_KEY", $ApiKey, "User")
 
 Write-Host "已完成："
 Write-Host "1. 更新 $ConfigFile"
-Write-Host "2. 设置当前会话环境变量 XIXU_API_KEY"
+Write-Host "2. 设置当前会话环境变量 LUOHONGKUN_API_KEY"
 Write-Host "3. 持久化为用户级环境变量"
 Write-Host ""
 Write-Host '重新打开 PowerShell 后会自动生效。当前会话已可直接使用。'

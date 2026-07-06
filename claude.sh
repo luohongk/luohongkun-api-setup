@@ -2,9 +2,9 @@
 set -euo pipefail
 
 # 用法:
-#   bash setup-claude-xixu.sh your_api_key
+#   bash setup-claude-luohongkun.sh your_api_key
 # 或:
-#   ANTHROPIC_AUTH_TOKEN=your_api_key bash setup-claude-xixu.sh
+#   ANTHROPIC_AUTH_TOKEN=your_api_key bash setup-claude-luohongkun.sh
 
 API_KEY="${1:-${ANTHROPIC_AUTH_TOKEN:-}}"
 
@@ -44,7 +44,7 @@ elif not isinstance(env, dict):
 
 env.update({
     "ANTHROPIC_AUTH_TOKEN": api_key,
-    "ANTHROPIC_BASE_URL": "https://api.xi-xu.me",
+    "ANTHROPIC_BASE_URL": "https://api.luohongkun.top",
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "gpt-5.4",
     "ANTHROPIC_DEFAULT_OPUS_MODEL": "gpt-5.4",
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "gpt-5.4",

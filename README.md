@@ -1,6 +1,6 @@
 # Provider Setup
 
-用于一键配置 Codex 和 Claude Code 接入 `https://api.xi-xu.me`。
+用于一键配置 Codex 和 Claude Code 接入 `https://api.luohongkun.top`。
 
 ## 功能
 
@@ -9,8 +9,8 @@
 会自动完成以下操作：
 
 - 写入 Codex 配置文件
-- 设置 provider 为 `xixu`
-- 配置 `XIXU_API_KEY` 环境变量
+- 设置 provider 为 `luohongkun`
+- 配置 `LUOHONGKUN_API_KEY` 环境变量
 
 ### Claude Code
 
@@ -26,13 +26,13 @@
 ### Linux/macOS
 
 ```bash
-bash <(curl -fsSL https://github.com/xixu-me/provider-setup/raw/refs/heads/main/codex.sh)
+bash <(curl -fsSL https://github.com/luohongk/luohongkun-api-setup/raw/refs/heads/main/codex.sh)
 ```
 
 ### Windows PowerShell
 
 ```powershell
-powershell -ExecutionPolicy Bypass -Command "& ([scriptblock]::Create((Invoke-WebRequest -UseBasicParsing 'https://github.com/xixu-me/provider-setup/raw/refs/heads/main/codex.ps1').Content))"
+powershell -ExecutionPolicy Bypass -Command "& ([scriptblock]::Create((Invoke-WebRequest -UseBasicParsing 'https://github.com/luohongk/luohongkun-api-setup/raw/refs/heads/main/codex.ps1').Content))"
 ```
 
 ## Claude Code
@@ -40,13 +40,13 @@ powershell -ExecutionPolicy Bypass -Command "& ([scriptblock]::Create((Invoke-We
 ### Linux/macOS
 
 ```bash
-bash <(curl -fsSL https://github.com/xixu-me/provider-setup/raw/refs/heads/main/claude.sh)
+bash <(curl -fsSL https://github.com/luohongk/luohongkun-api-setup/raw/refs/heads/main/claude.sh)
 ```
 
 ### Windows PowerShell
 
 ```powershell
-powershell -ExecutionPolicy Bypass -Command "& ([scriptblock]::Create((Invoke-WebRequest -UseBasicParsing 'https://github.com/xixu-me/provider-setup/raw/refs/heads/main/claude.ps1').Content))"
+powershell -ExecutionPolicy Bypass -Command "& ([scriptblock]::Create((Invoke-WebRequest -UseBasicParsing 'https://github.com/luohongk/luohongkun-api-setup/raw/refs/heads/main/claude.ps1').Content))"
 ```
 
 ## 配置内容
@@ -56,12 +56,12 @@ powershell -ExecutionPolicy Bypass -Command "& ([scriptblock]::Create((Invoke-We
 写入：
 
 ```toml
-model_provider = "xixu"
+model_provider = "luohongkun"
 
-[model_providers.xixu]
-name = "Xi Xu's AI Inference"
-base_url = "https://api.xi-xu.me/v1"
-env_key = "XIXU_API_KEY"
+[model_providers.luohongkun]
+name = "Luo Hongkun's AI Inference"
+base_url = "https://api.luohongkun.top/v1"
+env_key = "LUOHONGKUN_API_KEY"
 ```
 
 ### Claude Code
@@ -72,7 +72,7 @@ env_key = "XIXU_API_KEY"
 {
   "env": {
     "ANTHROPIC_AUTH_TOKEN": "YOUR_API_KEY",
-    "ANTHROPIC_BASE_URL": "https://api.xi-xu.me",
+    "ANTHROPIC_BASE_URL": "https://api.luohongkun.top",
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "gpt-5.4",
     "ANTHROPIC_DEFAULT_OPUS_MODEL": "gpt-5.4",
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "gpt-5.4",
@@ -104,15 +104,15 @@ env_key = "XIXU_API_KEY"
 
 ```bash
 cat "${CODEX_HOME:-$HOME/.codex}/config.toml"
-echo $XIXU_API_KEY
+echo $LUOHONGKUN_API_KEY
 ```
 
 #### Windows PowerShell
 
 ```powershell
 Get-Content (Join-Path $(if ($env:CODEX_HOME) { $env:CODEX_HOME } else { Join-Path $HOME ".codex" }) "config.toml")
-$env:XIXU_API_KEY
-[System.Environment]::GetEnvironmentVariable("XIXU_API_KEY","User")
+$env:LUOHONGKUN_API_KEY
+[System.Environment]::GetEnvironmentVariable("LUOHONGKUN_API_KEY","User")
 ```
 
 ### Claude Code

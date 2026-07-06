@@ -82,7 +82,7 @@ if ($data.ContainsKey("env") -and $data["env"] -is [System.Collections.IDictiona
 }
 
 $envTable["ANTHROPIC_AUTH_TOKEN"] = $ApiKey
-$envTable["ANTHROPIC_BASE_URL"] = "https://api.xi-xu.me"
+$envTable["ANTHROPIC_BASE_URL"] = "https://api.luohongkun.top"
 $envTable["ANTHROPIC_DEFAULT_HAIKU_MODEL"] = "gpt-5.4"
 $envTable["ANTHROPIC_DEFAULT_OPUS_MODEL"] = "gpt-5.4"
 $envTable["ANTHROPIC_DEFAULT_SONNET_MODEL"] = "gpt-5.4"
