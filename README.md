@@ -21,18 +21,33 @@
 - 配置 `ANTHROPIC_BASE_URL`
 - 配置默认模型为 `gpt-5.4`
 
+> 推荐使用 jsDelivr CDN（下方命令），不受 GitHub 原始域名的限流影响。
+> 若 CDN 内容滞后，可改用备用的 `raw.githubusercontent.com` 地址。
+
 ## Codex
 
 ### Linux/macOS
 
 ```bash
-bash <(curl -fsSL https://github.com/luohongk/luohongkun-api-setup/raw/refs/heads/main/codex.sh)
+bash <(curl -fsSL https://cdn.jsdelivr.net/gh/luohongk/luohongkun-api-setup@main/codex.sh)
+```
+
+备用（GitHub 原始地址，可能被限流）：
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/luohongk/luohongkun-api-setup/main/codex.sh)
 ```
 
 ### Windows PowerShell
 
 ```powershell
-powershell -ExecutionPolicy Bypass -Command "& ([scriptblock]::Create((Invoke-WebRequest -UseBasicParsing 'https://github.com/luohongk/luohongkun-api-setup/raw/refs/heads/main/codex.ps1').Content))"
+powershell -ExecutionPolicy Bypass -Command "& ([scriptblock]::Create((Invoke-WebRequest -UseBasicParsing 'https://cdn.jsdelivr.net/gh/luohongk/luohongkun-api-setup@main/codex.ps1').Content))"
+```
+
+备用（GitHub 原始地址，可能被限流）：
+
+```powershell
+powershell -ExecutionPolicy Bypass -Command "& ([scriptblock]::Create((Invoke-WebRequest -UseBasicParsing 'https://raw.githubusercontent.com/luohongk/luohongkun-api-setup/main/codex.ps1').Content))"
 ```
 
 ## Claude Code
@@ -40,13 +55,25 @@ powershell -ExecutionPolicy Bypass -Command "& ([scriptblock]::Create((Invoke-We
 ### Linux/macOS
 
 ```bash
-bash <(curl -fsSL https://github.com/luohongk/luohongkun-api-setup/raw/refs/heads/main/claude.sh)
+bash <(curl -fsSL https://cdn.jsdelivr.net/gh/luohongk/luohongkun-api-setup@main/claude.sh)
+```
+
+备用（GitHub 原始地址，可能被限流）：
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/luohongk/luohongkun-api-setup/main/claude.sh)
 ```
 
 ### Windows PowerShell
 
 ```powershell
-powershell -ExecutionPolicy Bypass -Command "& ([scriptblock]::Create((Invoke-WebRequest -UseBasicParsing 'https://github.com/luohongk/luohongkun-api-setup/raw/refs/heads/main/claude.ps1').Content))"
+powershell -ExecutionPolicy Bypass -Command "& ([scriptblock]::Create((Invoke-WebRequest -UseBasicParsing 'https://cdn.jsdelivr.net/gh/luohongk/luohongkun-api-setup@main/claude.ps1').Content))"
+```
+
+备用（GitHub 原始地址，可能被限流）：
+
+```powershell
+powershell -ExecutionPolicy Bypass -Command "& ([scriptblock]::Create((Invoke-WebRequest -UseBasicParsing 'https://raw.githubusercontent.com/luohongk/luohongkun-api-setup/main/claude.ps1').Content))"
 ```
 
 ## 配置内容
