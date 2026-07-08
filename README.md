@@ -41,13 +41,13 @@ bash <(curl -fsSL https://raw.githubusercontent.com/luohongk/luohongkun-api-setu
 ### Windows PowerShell
 
 ```powershell
-powershell -ExecutionPolicy Bypass -Command "& ([scriptblock]::Create((Invoke-WebRequest -UseBasicParsing 'https://cdn.jsdelivr.net/gh/luohongk/luohongkun-api-setup@main/codex.ps1').Content))"
+powershell -ExecutionPolicy Bypass -Command '$r = Invoke-WebRequest -UseBasicParsing "https://cdn.jsdelivr.net/gh/luohongk/luohongkun-api-setup@main/codex.ps1"; $c = $r.Content; if ($c -is [byte[]]) { $c = [System.Text.Encoding]::UTF8.GetString($c) }; & ([scriptblock]::Create([string]$c))'
 ```
 
 备用（GitHub 原始地址，可能被限流）：
 
 ```powershell
-powershell -ExecutionPolicy Bypass -Command "& ([scriptblock]::Create((Invoke-WebRequest -UseBasicParsing 'https://raw.githubusercontent.com/luohongk/luohongkun-api-setup/main/codex.ps1').Content))"
+powershell -ExecutionPolicy Bypass -Command '$r = Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/luohongk/luohongkun-api-setup/main/codex.ps1"; $c = $r.Content; if ($c -is [byte[]]) { $c = [System.Text.Encoding]::UTF8.GetString($c) }; & ([scriptblock]::Create([string]$c))'
 ```
 
 ## Claude Code
@@ -67,13 +67,13 @@ bash <(curl -fsSL https://raw.githubusercontent.com/luohongk/luohongkun-api-setu
 ### Windows PowerShell
 
 ```powershell
-powershell -ExecutionPolicy Bypass -Command "& ([scriptblock]::Create((Invoke-WebRequest -UseBasicParsing 'https://cdn.jsdelivr.net/gh/luohongk/luohongkun-api-setup@main/claude.ps1').Content))"
+powershell -ExecutionPolicy Bypass -Command '$r = Invoke-WebRequest -UseBasicParsing "https://cdn.jsdelivr.net/gh/luohongk/luohongkun-api-setup@main/claude.ps1"; $c = $r.Content; if ($c -is [byte[]]) { $c = [System.Text.Encoding]::UTF8.GetString($c) }; & ([scriptblock]::Create([string]$c))'
 ```
 
 备用（GitHub 原始地址，可能被限流）：
 
 ```powershell
-powershell -ExecutionPolicy Bypass -Command "& ([scriptblock]::Create((Invoke-WebRequest -UseBasicParsing 'https://raw.githubusercontent.com/luohongk/luohongkun-api-setup/main/claude.ps1').Content))"
+powershell -ExecutionPolicy Bypass -Command '$r = Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/luohongk/luohongkun-api-setup/main/claude.ps1"; $c = $r.Content; if ($c -is [byte[]]) { $c = [System.Text.Encoding]::UTF8.GetString($c) }; & ([scriptblock]::Create([string]$c))'
 ```
 
 ## 配置内容
